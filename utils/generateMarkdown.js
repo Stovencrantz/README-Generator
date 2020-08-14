@@ -2,30 +2,44 @@
 
 
 
-function generateMarkdown(response) {
+function generateMarkdown(data) {
   return `
-  # ${response.title}
+    # ${data.title}
 
-  # Table of Contents
+    ## Description
+    ${data.description}
 
-  - [Description] (#description)
-  - [License](#license)
+    # Table of Contents
 
-  ## Description
-      ${response.description}
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Credits](#credits)
+    - [License](#license)
 
-  ## License:
-      ${response.license}
+    ## Installation:      
+        ${data.installation} 
 
-  ## Installation
-      ${response.installation}
+    ## Usage:
+        ${data.usage}
 
-  ## Usage
-      ${response.contributing}
+    ## Contributors:
+        ${data.contribution}
 
-  ## Testing
-      ${response.test}
+    ## License:
+        ${data.license}
+    
+    #Test:
+        ${data.test}
 
+    ## Questions:
+        Contact me at:
+        [${data.gitHub}](https://github.com/${data.gitHub})
+        [${data.email}](${data.email})
+
+    ## Badges:
+        ${data.badges}
 `;
 }
+
+
 module.exports = generateMarkdown;
