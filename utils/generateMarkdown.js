@@ -1,43 +1,42 @@
-// function to generate markdown for README
-
-
-
 function generateMarkdown(data) {
-  return `
-    # ${data.title}
+    return `
+# ${data.title}
+![License](https://img.shields.io/badge/License-${data.license}-blue.svg "License Badge")
 
-    ## Description
+## Description:
     ${data.description}
 
-    # Table of Contents
+# Table of Contents
 
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#credits)
-    - [License](#license)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage) 
+- [Contributing](#contributing)
+- [Test](#test)
+- [Credits](#credits)
+- [License](#license) 
+- [Questions](#questions)
 
-    ## Installation:      
-        ${data.installation} 
-
-    ## Usage:
-        ${data.usage}
-
-    ## Contributors:
-        ${data.contribution}
-
-    ## License:
-        ${data.license}
+## Installation:
+    ${data.installation}
+## Usage:
+    ${data.usage}
+## Contributing:
+    ${data.contribution}
+## Test:
+    ${data.test}
+## Credits:
+    ${data.credit}
+## License:
+    For more information about the License, click on the link below.
     
-    #Test:
-        ${data.test}
-
-    ## Questions:
-        Contact me at:
-        [${data.gitHub}](https://github.com/${data.gitHub})
-        [${data.email}](${data.email})
-
-    ## Badges:
-        ${data.badges}
+- [License](https://opensource.org/licenses/${data.license})
+## Questions:
+    Please contact me about this program using the following link: 
+- [GitHub Profile](https://github.com/${data.github})
+For additional questions please reach out to my email at: ${data.email}.
+    Here is a video on how to work the application.
+- [Video](https://drive.google.com/file/d/1S7Ghxkw8DkgHQ8dZb39vRoqImev4Hydz/view)
 `;
 }
 

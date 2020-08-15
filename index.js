@@ -10,11 +10,7 @@ const generateMarkdown = require("./utils/generateMarkdown");
 //takes a function follow the common error-first callback style, i.e. taking a (err, value) => ... callback as the last argument, and returns a version that returns promises
 const writeFileAsync = util.promisify(fs.writeFile);
 
-var readMeData = fs.readFile("./utils/generateMarkdown.js", "utf-8", function(error){
-    if (error) {
-        return console.log(error);
-    }
-});
+
 
 
 //creates array of questions
@@ -22,64 +18,71 @@ function promptUser() {
     return inquirer.prompt([
         {
             type: "input",
-            message: "What is the name of your project?",
+            message: "What is the name of your Project?",
             name: "title"
-        }, {
+        },
+        {
             type: "input",
-            message: "Please enter a description of your project.",
+            message: `Please enter a description of your project.`,
             name: "description"
-        }, {
+        },
+        {
             type: "input",
-            message: "List the steps to download and run your program",
-            name: "installation",            
-        }, {
+            message: "What are the minimum requirements for the user to use your program?",
+            name: "installation"
+        },
+        {
             type: "input",
-            message: "Please provide instructions and examples on how to use your program",
+            message: "How does the user use your program used?",
             name: "usage"
-        }, {
+        },
+        {
             type: "input",
-            message: "List any third party assets or tutorials you used",
-            name: "credits"
-        }, {
+            message: "Who contributed on this project?",
+            name: "contribution"
+        },
+        {
+            type: "input",
+            message: "How does the user test the program?",
+            name: "test"
+        },
+        {
             type: "checkbox",
             message: "Please select a license.",
             choices: [
                 "Apache",
                 "MIT",
                 "ISC",
-                "None"
-            ],
+            ],  
             name: "license"
-        },  {
-            type: "input",
-            message: "Enter your GitHub username:",
-            name: "gitHub"
-        }, {
-            type: "input",
-            message: "Enter your email address",
-            name: "email"
         },
         {
             type: "input",
-            message: "Enter a badge link",
-            name: "badge"
-        }
-    ])
-};
+            message: "Whose credit is this work?",
+            name: "credit"
+        },
+        {
+            type: "input",
+            message: "What is your GitHub username",
+            name: "github"
+        },
+        {
+            type: "input",
+            message: "What is your email address",
+            name: "email"
+        },
+    ]);
+}
 
-
-// Start sth eprompt to the user and returns either created successfully message or error
 async function init() {
-    const data = await promptUser();
-
     try {
-        console.log("Index.js: ", generateMarkdown(data));
-
+        const data = await promptUser();
+        console.log(data);
         
         await writeFileAsync("README.md", generateMarkdown(data));
-        console.log("Readme file created!");
+        console.log("Success!");
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
 }
 
