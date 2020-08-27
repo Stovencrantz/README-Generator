@@ -1,9 +1,9 @@
 
-# README-Generator
-![License](https://img.shields.io/badge/License-Apache-blue.svg "License Badge")
+# Employee-Info-Tracker
+![License](https://img.shields.io/badge/License--blue.svg "License Badge")
 
 ## Description:
-    This application takes in data from the user and generates a specialized README.md file catered to the particular project of the user.
+    Allows the user to navigate through various menus to see data about their employees. They are able to view all employees, their roles, and their departments. The User can  also add employees, roles, and departments as well as updated the role of individual employees.
 
 # Table of Contents
 
@@ -17,19 +17,19 @@
 - [Questions](#questions)
 
 ## Installation:
-    The user is required to have node installed on their machine. They will then need to download all dependencies by entering 'npm install' into their terminal, and to run the program they must enter 'node index' into their terminal.
+    The user must open their terminal and run the command `npm i` followed by `node server.js`
 ## Usage:
-    The user will be prompted with several questions regarding details about their project. As the user enters information into the terminal, the information is stored and compiled into markdown language syntax.
+    The user will navigate through the main directory and then follow the prompts.
 ## Contributing:
-    
+    Steve Knapp
 ## Test:
-    The user can test the program by entering 'node test' into the terminal.
+    No testing capabilities are available at this time, this is to be implemented in a future update
 ## Credits:
-    
+    Steve Knapp
 ## License:
     For more information about the License, click on the link below.
     
-- [License](https://opensource.org/licenses/Apache)
+- [License](https://opensource.org/licenses/)
 ## Questions:
     Please contact me about this program using the following link: 
 - [GitHub Profile](https://github.com/Stovencrantz)
