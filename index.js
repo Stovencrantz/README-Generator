@@ -1,5 +1,5 @@
 
-// Install iqnuirer by typing "npm install inquirer" in the console
+// Install inquirer by typing "npm install inquirer" in the console
 
 // required libraries
 const inquirer = require("inquirer");
@@ -33,7 +33,7 @@ function promptUser() {
         },
         {
             type: "input",
-            message: "How does the user use your program used?",
+            message: "How does the user execute the program?",
             name: "usage"
         },
         {
